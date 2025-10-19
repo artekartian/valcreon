@@ -1,3 +1,3 @@
 # Valcreon – szablon landing page
 
-Valcreon - Big Value Creation
+Valcreon - The Value Creation Company
