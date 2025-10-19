@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/switzer">
+  <title>Valcreon - The Value Creation Company. Explore our brands.</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background-color: #0f0f1a;
+      overflow-x: hidden;
+      font-family: 'Switzer', sans-serif;
+    }
+
+    .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;      
+    }
+
+    .hero-content {
+        position: relative;
+        color: white;
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        gap: 0;
+    }
+
+    .hero-title {
+        margin: 0;
+        font-weight: 200;
+        font-size: clamp(2rem, 10vw, 10rem);
+        background: linear-gradient(90deg, #c084fc, #6b21a8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        }
+
+    .hero-subtitle {
+        opacity: 1;
+        margin-top: 0.5rem;
+        font-weight: 200;
+        font-size: clamp(1.2rem, 2vw, 6rem);
+        letter-spacing: 0.05em;
+        margin-top: 0.15rem;
+        background: linear-gradient(90deg, #c084fc, #6b21a8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        line-height: 1.5;
+        font-weight: 200;
+        color: #cccccc;
+        margin-top: 1.5rem;
+     }
+
+    .hero-text-1 {
+        font-size: 0.8rem;
+        margin-top: 1rem;
+        line-height: 1;
+        font-weight: 200;
+        color: #cccccc;
+        margin-top: 8rem;
+        letter-spacing: 0.07em;
+     }
+
+
+    .section-title {
+        margin: 0;
+        font-weight: 200;
+        font-size: clamp(2rem, 6vw, 8rem);
+        background: linear-gradient(90deg, #c084fc, #6b21a8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .section-subtitle {
+        opacity: 1;        
+        font-weight: 200;
+        font-size: clamp(1.2rem, 2vw, 6rem);
+        letter-spacing: 0rem;
+        margin-top: 0.15rem;
+        background: linear-gradient(90deg, #c084fc, #6b21a8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+
+      .section-subtitle-PL {
+        opacity: 0.5;
+        font-weight: 200;
+        font-size: clamp(1rem, 1.5vw, 4rem);
+        letter-spacing: 0rem;
+        margin-top: -1.1rem;
+        background: linear-gradient(90deg, #6b21a8, #fde047);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;  /* Absolutne pozycjonowanie względem sekcji (dodaj position: relative do .Sekcja-* jeśli brak) */
+        /*top: -3rem;              /* Maksymalnie do góry – zmień na top: -Xrem dla wychylenia poza sekcję */
+        /* left: 50%;           /* Centrowanie poziomo */
+        *transform: translateX(-80%);  /* Dokładne centrowanie */
+        width: 100%;         /* Pełna szerokość dla centrowania */
+        text-align: center;  /* Centrowanie tekstu */
+        z-index: 5;          /* Na wierzchu, jeśli potrzeba */
+      }
+
+    /* NAV */
+
+      .hero-button {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        justify-content: center;
+        margin-top: 4rem;
+        padding: 1rem;          
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+     .button-gradient {
+        position: relative;
+        display: inline-block;
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: #d1d1d1;
+        background-color: #0f0f1a; /* stałe tło */
+        border: 1px solid #46418465;
+        border-radius: 10px;
+        box-sizing: border-box;
+        transition: all 0.3s ease; 
+        flex: 0 1 auto;
+        margin-right: 0.3rem;        
+
+      }
+
+     .button-gradient:hover {
+        border: 1px solid transparent;
+        background: linear-gradient(#0f0f1a, #0f0f1a) padding-box, 
+                    linear-gradient(90deg, #a855f7, #7e22ce) border-box;
+        transform: scale(1.05);
+        box-shadow: 0 0 16px rgba(192, 132, 252, 0.5);
+      }
+
+
+      /* GLOW */
+      .glow {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+            circle,
+            rgba(138,43,226,0.4) 0%,
+            rgba(138,43,226,0.2) 40%,
+            rgba(0,0,0,0) 100%
+            );
+        filter: blur(100px);
+        opacity: 0.8;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: pulse 6s infinite ease-in-out;
+        will-change: transform, opacity;
+      }
+
+      @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+        z-index: 0;
+      }
+      }
+    
+      .glow-ring {
+      position: absolute;
+      width: 700px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom, rgba(192,132,252,1), rgba(107,33,168,0.3));
+      filter: blur(60px);
+      animation: pulse-ring 4s infinite ease-in-out;
+    }
+
+    @keyframes pulse-ring {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+      }
+    }
+        
+    .glow-gradient {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle at center, #c084fc 0%, #6b21a8 50%, transparent 100%);
+      filter: blur(100px);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .glow-soft {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(138,43,226,0.3) 0%, rgba(0,0,0,0) 80%);
+      filter: blur(120px);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .Sekcja-1 {
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-size: 32px;
+          color: white;
+          background: #0f0f1a;
+          border-bottom: 1px solid #161620;
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+          position: relative;
+    }
+
+    .Sekcja-2 {
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-size: 28px;
+          color: white;
+          background: #1a1a2e;
+          border-bottom: 1px solid #161620;
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+          position: relative;
+    }
+
+    .Sekcja-3 {
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-size: 24px;
+          color: white;
+          background: #0e0e1b;
+          border-bottom: 1px solid #17173f;
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+          position: relative;
+      }
+
+      .Sekcja-1.animate,
+      .Sekcja-2.animate,
+      .Sekcja-3.animate {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .back-button {
+          position: absolute;
+          bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 0.75rem 1rem;
+          font-size: 0.9rem;
+          font-weight: 200;
+          text-decoration: none;
+          color: #cccccc;
+          background-color: rgba(15, 15, 26, 0.8);
+          border: 1px solid #46418465;
+          border-radius: 10px;
+          transition: all 0.3s ease;
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .back-button:hover {
+          border: 1px solid transparent;
+          background: linear-gradient(rgba(15, 15, 26, 0.8), rgba(15, 15, 26, 0.8)) padding-box, 
+                      linear-gradient(90deg, #a855f7, #7e22ce) border-box;
+          color: white;
+                    box-shadow: 0 0 16px rgba(192, 132, 252, 0.5);
+        }
+
+        .cta-button {
+          margin: 1rem 0;
+          display: inline-block;
+          flex: 0 1 auto;
+          min-width: 60px
+            
+        }
+
+        .section-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          
+          flex-grow: 1;
+        }
+
+  </style>
+</head>
+
+<body>
+
+<div class="glow-ring"></div>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+    <p class="hero-title">valcreon.com</p>
+    <p class="hero-subtitle">The Value Creation Company</p>
+    <!-- <p class="hero-text">Microsoft + Us. Solutions that accelerate your business.</p> -->
+
+    
+    <div class="hero-button">
+    <a class="button-gradient" href="#RedFlag">RedFlag.tech</a>
+    <a class="button-gradient" href="#Finerlo">Finerlo.com</a>
+    <a class="button-gradient" href="#WyslijSkan">WyslijSkan.pl</a>
+    <!-- <button class="button-gradient">StopkiMailowe.pl</button> -->
+    </div>
+
+  </div>
+</section>
+
+<section class="Sekcja-1 animate" id="RedFlag">
+  <div class="section-content">
+    <div class="hero-content">
+    <p class="section-title">RedFlag.tech</p>
+    <p class="section-subtitle">Microsoft 365 Security services.</p>
+    <p class="section-subtitle-PL">Zabezpieczenia dla Microsoft 365.</p>
+    <div class="cta-button">
+      <a class="button-gradient" href="https://redflag.tech" target="_blank" rel="noopener">Visit site</a>
+    </div>
+  </div>
+  <a href="#home" class="back-button">↑</a>
+</section>
+
+<section class="Sekcja-1 animate" id="Finerlo">
+  <div class="section-content">
+    <p class="section-title">Finerlo.com</p>
+    <p class="section-subtitle">Microsoft 365 lokal backup that keeps ransomware out.</p>
+        <p class="section-subtitle-PL">Lokalny backup Microsoft 365 z ochroną przed ransomware.</p>
+    <div class="cta-button">
+      <a class="button-gradient" href="https://finerlo.com" target="_blank" rel="noopener">Visit site</a>
+    </div>
+  </div>
+  <a href="#home" class="back-button">↑</a>
+</section>
+
+<section class="Sekcja-3 animate" id="WyslijSkan">
+  <div class="section-content">
+    <p class="section-title">WyslijSkan.pl</p>
+    <p class="section-subtitle">Simple email delivery for office devices and systems.</p>
+        <p class="section-subtitle-PL">Prosta wysyłka e-maili dla urządzeń biurowych i systemów powiadomień.</p>
+    <div class="cta-button">
+      <a class="button-gradient" href="https://wyslijskan.pl" target="_blank" rel="noopener">Visit site</a>
+    </div>
+  </div>
+  <a href="#home" class="back-button">↑</a>
+</section>
+
+</body>
+</html>
