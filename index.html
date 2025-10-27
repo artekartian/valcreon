@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta content="Valcreon - The Value Creation Company" name="description"/>
@@ -7,17 +7,73 @@
   <title>Valcreon - The Value Creation Company. Explore our brands.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: #111;
+    color: #eee;
+    text-align: center;
+    max-width: 100vw;
+  }
 
-    body {
-      margin: 0;
-      background-color: #0f0f1a;
-      overflow-x: hidden;
-      font-family: 'Switzer', sans-serif;
-    }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  }
+
+
+  button,
+  .btn {
+    min-width: 160px;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
+  <meta charset="UTF-8">
+  <meta content="Valcreon - The Value Creation Company" name="description"/>
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/switzer">
+  <title>Valcreon - The Value Creation Company. Explore our brands.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+
+	
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Switzer', sans-serif;
+    background-color: #0f0f1a;
+    color: #eee;
+    text-align: center;
+    scroll-behavior: smooth;
+  }
+
+
+  .brand {
+    max-width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
 
     .hero {
         position: relative;
@@ -101,7 +157,20 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+	margin: 0 auto;
       }
+
+    .section-city {
+        opacity: 1;        
+        font-weight: 200;
+        font-size: clamp(0.8rem, 1vw, 0.8rem);
+        letter-spacing: 0rem;
+        margin-top: 0.15rem;
+        background: linear-gradient(90deg, #c084fc, #6b21a8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
 
 
       .section-subtitle-PL {
@@ -114,6 +183,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+	margin: 0 auto;
         position: relative;  /* Absolutne pozycjonowanie względem sekcji (dodaj position: relative do .Sekcja-* jeśli brak) */
         /*top: -3rem;              /* Maksymalnie do góry – zmień na top: -Xrem dla wychylenia poza sekcję */
         /* left: 50%;           /* Centrowanie poziomo */
@@ -150,9 +220,8 @@
         box-sizing: border-box;
         transition: all 0.3s ease; 
         flex: 0 1 auto;
-        margin-right: 0.3rem;        
-
-      }
+         	min-width: 120px;       /* lub np. 10em, zależnie od projektu */
+ 	           }
 
      .button-gradient:hover {
         border: 1px solid transparent;
@@ -242,7 +311,7 @@
           align-items: center;
           justify-content: center;
           text-align: center;
-          font-size: 32px;
+          font-size: 24px;
           color: white;
           background: #0f0f1a;
           border-bottom: 1px solid #161620;
@@ -259,7 +328,7 @@
           align-items: center;
           justify-content: center;
           text-align: center;
-          font-size: 28px;
+          font-size: 24px;
           color: white;
           background: #1a1a2e;
           border-bottom: 1px solid #161620;
@@ -343,17 +412,17 @@
 
 <body>
 
-<div class="glow-ring"></div>
+<div class="glow-ring brand""></div>
 
 <section class="hero" id="home">
     <div class="hero-content">
     <p class="hero-title">valcreon.com</p>
     <p class="hero-subtitle">The Value Creation Company</p>
-      <p class="section-subtitle"  style="opacity: 0.5;">LONDON | WARSAW | NEW YORK</p>
+      <p class="section-city">LONDON | WARSAW | NEW YORK</p>
     <!-- <p class="hero-text">Microsoft + Us. Solutions that accelerate your business.</p> -->
 
     
-    <div class="hero-button">
+    <div class="hero-button button-group">
     <a class="button-gradient" href="#RedFlag">RedFlag.tech</a>
     <a class="button-gradient" href="#Finerlo">Finerlo.com</a>
     <a class="button-gradient" href="#Valselo">Valselo.com</a>
@@ -364,12 +433,12 @@
   </div>
 </section>
 
-<section class="Sekcja-1 animate" id="RedFlag">
+
+<section class="Sekcja-1 animate brand" id="RedFlag">
   <div class="section-content">
-    <div class="hero-content">
     <p class="section-title">RedFlag.tech</p>
     <p class="section-subtitle">Microsoft 365 Security services.</p>
-    <p class="section-subtitle-PL">Zabezpieczenia dla Microsoft 365.</p>
+        <p class="section-subtitle-PL">Zabezpieczenia dla Microsoft 365.</p>
     <div class="cta-button">
       <a class="button-gradient" href="https://redflag.tech" target="_blank" rel="noopener">Visit site</a>
     </div>
@@ -377,7 +446,8 @@
   <a href="#home" class="back-button">↑</a>
 </section>
 
-<section class="Sekcja-1 animate" id="Finerlo">
+
+<section class="Sekcja-1 animate brand" id="Finerlo">
   <div class="section-content">
     <p class="section-title">Finerlo.com</p>
     <p class="section-subtitle">Microsoft 365 local backup that keeps ransomware out.</p>
@@ -390,7 +460,7 @@
 </section>
 
 
-  <section class="Sekcja-3 animate" id="Valselo">
+  <section class="Sekcja-3 animate brand" id="Valselo">
   <div class="section-content">
     <p class="section-title">Valselo.com</p>
     <p class="section-subtitle">Business Laptops. Simplified.</p>
@@ -402,7 +472,7 @@
   <a href="#home" class="back-button">↑</a>
 </section>
 
-<section class="Sekcja-3 animate" id="WyslijSkan">
+<section class="Sekcja-3 animate brand" id="WyslijSkan">
   <div class="section-content">
     <p class="section-title">WyslijSkan.pl</p>
     <p class="section-subtitle">Simple email delivery for office devices and systems.</p>
