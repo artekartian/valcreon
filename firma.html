@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="img/fav.ico">
+  <title>Valcreon — Microsoft 365 Security</title>
+  <style>
+
+:root{
+  --bg0:#070709;
+  --bg1:#0b0b0e;
+  --card: rgba(255,255,255,.06);
+  --stroke: rgba(255,255,255,.12);
+  --muted: rgba(255,255,255,.68);
+  --brand:#6f42c1;
+}
+
+{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(111,66,193,.18), transparent 60%),
+              linear-gradient(180deg, var(--bg0), var(--bg1) 40%, var(--bg0));
+  color:#fff;
+    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+    min-height: 100vh;
+
+
+}
+
+.container{ max-width: 1100px; padding: 0 16px; margin: 0 auto; }
+.section{ padding: 72px 0; }
+
+.hr-soft{
+  height:1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+  border:0;
+  margin: 0;
+}
+
+/* ===== Firma (Microsoft-style) ===== */
+.v-firmaCard{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+  box-shadow: 0 22px 70px rgba(0,0,0,.55);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  position: relative;
+}
+
+.v-firmaCard::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: radial-gradient(900px 320px at 20% 0%, rgba(111,66,193,.18), transparent 56%);
+}
+
+.v-firmaGrid{ display:grid; grid-template-columns: 1.05fr .95fr; }
+.v-firmaLeft{ padding: 44px; position: relative; }
+.v-firmaRight{ padding: 34px; background: rgba(0,0,0,.18); border-left: 1px solid rgba(255,255,255,.06); position: relative; }
+
+.v-firmaLogo{
+  height: clamp(60px, 6vw, 90px);
+  width:auto;
+  display:block;
+  margin: 0 0 18px;
+  filter: drop-shadow(0 8px 30px rgba(111,66,193,.40));
+}
+
+.v-firmaTitle{
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  color:#fff;
+}
+
+.v-firmaLead{
+  color: rgba(255,255,255,.68);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0 0 18px;
+  max-width: 62ch;
+}
+
+.v-firmaActions{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 18px; }
+
+.v-badgesTitle{ font-weight: 700; letter-spacing: -0.01em; margin-bottom: 12px; color: rgba(255,255,255,.92); }
+
+.v-badgesGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.v-badge{ display:flex; gap: 10px; align-items:flex-start; padding: 12px; border-radius: 14px; background: rgba(0,0,0,.22); border: 1px solid rgba(255,255,255,.10); }
+
+.v-badgeIcon{ width: 34px; height: 34px; display:grid; place-items:center; border-radius: 12px; background: rgba(111,66,193,.12); border: 1px solid rgba(111,66,193,.28); }
+
+.v-badgeHead{ font-weight: 650; color: rgba(255,255,255,.92); margin-bottom: 2px; font-size: 0.95rem; }
+.v-badgeSub{ color: rgba(255,255,255,.60); font-size: 0.85rem; line-height: 1.35; }
+
+.v-miniKpis{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 24px 0 34px; }
+
+.v-kpi{ padding: 12px; border-radius: 14px; background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.10); }
+.v-kpiTop{ color: rgba(255,255,255,.55); font-size: 12px; margin-bottom: 2px; }
+.v-kpiBottom{ color: rgba(255,255,255,.90); font-weight: 650; font-size: 13px; }
+
+/* Buttons */
+.v-btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; padding: 12px 16px; border-radius: 12px; font-weight: 650; text-decoration:none; border: 1px solid rgba(255,255,255,.12); transition: transform .2s ease, filter .2s ease, background-color .2s ease; }
+.v-btn:hover{ transform: translateY(-2px); }
+.v-btnBrand{ background: var(--brand); color:#fff; }
+.v-btnBrand:hover{ filter: brightness(1.05); }
+.v-btnGhost{ background: rgba(255,255,255,.06); color:#fff; }
+.v-btnGhost:hover{ background: rgba(255,255,255,.10); }
+
+/* Optional simple footer */
+.footer{ padding: 24px 0 32px; text-align:center; color: rgba(255,255,255,.55); font-size: 14px; }
+
+@media (max-width: 992px){
+  .v-firmaGrid{ grid-template-columns: 1fr; }
+  .v-firmaLeft{ padding: 34px 22px; }
+  .v-firmaRight{ padding: 22px; border-left: 0; border-top: 1px solid rgba(255,255,255,.10); }
+  .v-badgesGrid{ grid-template-columns: 1fr; }
+  .v-miniKpis{ grid-template-columns: 1fr; }
+  .v-firmaLogo{ margin: 0 auto 16px; }
+}
+
+.section:last-of-type{
+  padding-bottom: 40px;
+
+  
+}
+
+
+.section{
+  flex: 1;
+}
+
+
+.v-firma{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+  </style>
+</head>
+<body>
+  <section class="section v-firma" id="firma">
+  <div class="container">
+
+    <div class="v-firmaCard">
+      <div class="v-firmaGrid">
+
+        <!-- LEFT: logo + claim -->
+        <div class="v-firmaLeft">
+          <img
+            src="img/FullLogo_Transparent_NoBuffer.png"
+            alt="Valcreon"
+            class="v-firmaLogo"
+            loading="lazy"
+          >
+
+          <h2 class="v-firmaTitle">
+            Valcreon - polska firma specjalizująca się w zabezpieczeniach Microsoft 365.
+          </h2>
+
+          <p class="v-firmaLead">
+            Pomagamy firmom uniknąć incydentów, uporządkować dostęp do danych i bezpiecznie rozwijać Microsoft 365. Zabezpieczamy: tożsamość, pocztę, urządzenia i dane. Wdrażamy podejście Zero Trust (zerowej tolerancji) w Microsoft 365.
+            Zmiany wprowadzamy przewidywalnie i bez przestojów.
+          </p>
+
+          <div class="v-miniKpis">
+            <div class="v-kpi">
+              <div class="v-kpiTop">Zakres</div>
+              <div class="v-kpiBottom">Microsoft 365</div>
+            </div>
+            <div class="v-kpi">
+              <div class="v-kpiTop">Podejście</div>
+              <div class="v-kpiBottom">Zero Trust</div>
+            </div>
+            <div class="v-kpi">
+              <div class="v-kpiTop">Kraj</div>
+              <div class="v-kpiBottom">Polska</div>
+            </div>
+            </div>
+
+          <div class="v-firmaActions">
+            <a class="v-btn v-btnBrand" href="#kontakt">Porozmawiajmy</a>
+            <a class="v-btn v-btnGhost" href="#security">Zobacz obszary</a>
+          </div>
+        </div>
+
+        
+
+        <!-- RIGHT: trust badges -->
+        <div class="v-firmaRight">
+          <div class="v-badgesTitle">Dlaczego firmy nam ufają</div>
+
+          <div class="v-badgesGrid">
+            <div class="v-badge">
+              <div class="v-badgeIcon">✅</div>
+              <div class="v-badgeText">
+                <div class="v-badgeHead">Przejrzysty proces</div>
+                <div class="v-badgeSub">audyt → plan → wdrożenie → utrzymanie</div>
+              </div>
+            </div>
+
+            <!-- <div class="v-badge">
+              <div class="v-badgeIcon">🧾</div>
+              <div class="v-badgeText">
+                <div class="v-badgeHead">Dokumentacja i standardy</div>
+                <div class="v-badgeSub">polityki, wyjątki, opisy, runbook</div>
+              </div>
+            </div>
+
+            <div class="v-badge">
+              <div class="v-badgeIcon">🛡️</div>
+              <div class="v-badgeText">
+                <div class="v-badgeHead">Security-first</div>
+                <div class="v-badgeSub">CA/MFA, Defender, Intune, DLP</div>
+              </div>
+            </div>
+
+            <div class="v-badge">
+              <div class="v-badgeIcon">🧠</div>
+              <div class="v-badgeText">
+                <div class="v-badgeHead">Bez marketingu</div>
+                <div class="v-badgeSub">technicznie i konkretnie</div>
+              </div>
+            </div>
+          </div> -->
+
+
+  <div class="v-badge">
+    <div class="v-badgeIcon">📉</div>
+    <div class="v-badgeText">
+      <div class="v-badgeHead">Mniejsze ryzyko incydentów</div>
+      <div class="v-badgeSub">ograniczamy phishing i przejęcia kont</div>
+    </div>
+  </div>
+
+  <div class="v-badge">
+    <div class="v-badgeIcon">⚙️</div>
+    <div class="v-badgeText">
+      <div class="v-badgeHead">Bezpieczne zmiany</div>
+      <div class="v-badgeSub">wdrożenia bez przestojów dla użytkowników</div>
+    </div>
+  </div>
+
+  <div class="v-badge">
+    <div class="v-badgeIcon">📊</div>
+    <div class="v-badgeText">
+      <div class="v-badgeHead">Widoczność i kontrola</div>
+      <div class="v-badgeSub">wiesz kto, gdzie i jak ma dostęp do danych</div>
+    </div>
+  </div>
+
+  <div class="v-badge">
+    <div class="v-badgeIcon">🧾</div>
+    <div class="v-badgeText">
+      <div class="v-badgeHead">Gotowość na audyt</div>
+      <div class="v-badgeSub">polityki, logi i dokumentacja uporządkowane</div>
+    </div>
+  </div>
+
+</div>
+
+        <!--  <div class="v-miniKpis">
+            <div class="v-kpi">
+              <div class="v-kpiTop">Zakres</div>
+              <div class="v-kpiBottom">Microsoft 365 Security</div>
+            </div>
+            <div class="v-kpi">
+              <div class="v-kpiTop">Podejście</div>
+              <div class="v-kpiBottom">Zero Trust</div>
+            </div>
+            <div class="v-kpi">
+              <div class="v-kpiTop">Kraj</div>
+              <div class="v-kpiBottom">Polska</div>
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+  <hr class="hr-soft">
+  <div class="footer">© <span id="year"></span> Valcreon | Microsoft 365 Security</div>
+ 
+ <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+
+</body>
+</html>
