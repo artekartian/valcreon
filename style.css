@@ -805,3 +805,22 @@ footer{
   #audit .row .btn{width:100%;justify-content:center;}
 }
 
+@media(max-width:1180px){
+  /* Schowaj CTA w headerze – wszystko jest w drawerze */
+  header .actions a{display:none;}
+  header .actions .hamburger{display:inline-flex;}
+
+  /* Schowaj subtitle "Microsoft AI Cloud Partner" – za długie */
+  .brand .t2{display:none;}
+  .brand .t1{font-size:16px;font-weight:800;}
+
+  /* Logo i tytuł trochę większe, oddychają */
+  .brand img,.brand .logo{width:38px;height:38px;}
+}
+
+@media(min-width:600px) and (max-width:1180px){
+  /* Tablet only – brand subtitle wraca, ale skrócony */
+  .brand .t2{display:block;font-size:11px;}
+  .brand .t2::after{content:"Microsoft Partner";}
+  .brand .t2 > *{display:none;} /* Schowaj długi oryginalny tekst */
+}
