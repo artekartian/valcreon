@@ -825,26 +825,22 @@ footer{
   .brand .t2 > *{display:none;} /* Schowaj długi oryginalny tekst */
 }
 
-.trustSection{padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(13,22,42,.20);}
+.trustSection{padding:56px 0;background:radial-gradient(600px 200px at center,rgba(124,92,255,.08),transparent);}
 .trustLabel{text-align:center;font-size:.72rem;text-transform:uppercase;letter-spacing:2.4px;opacity:.55;margin:0 0 28px;font-weight:600;}
-.trustLogos{display:grid;grid-template-columns:repeat(5,1fr);gap:40px;justify-items:center;align-items:center;}
-.trustLogos img{height:48px;width:auto;max-width:200px;object-fit:contain;opacity:.65;transition:opacity .3s,transform .3s,filter .3s;}
-.trustLogos img:hover{opacity:1;transform:scale(1.05);}
-@media(max-width:760px){.trustLogos{grid-template-columns:repeat(3,1fr);gap:28px;}.trustLogos img{height:40px;}}
+.trustLogos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
+.trustLogos img{height:48px;width:auto;max-width:200px;object-fit:contain;filter:grayscale(1) brightness(1.4);opacity:.65;transition:opacity .3s ease,filter .3s ease,transform .3s ease;}
+.trustLogos img:hover{opacity:1;filter:grayscale(0) brightness(1);transform:scale(2);}
 
+@media(max-width:760px){.trustLogos{gap:36px;}.trustLogos img{height:40px;}}
 
 .trustLogos img[src="dom100.png"],
 .trustLogos img[src="car.jpg"]{filter:invert(1) grayscale(1);}
 .trustLogos img[src="dom100.png"]:hover,
 .trustLogos img[src="car.jpg"]:hover{filter:invert(0) grayscale(0);}
-
 .trustLogos img[src$=".svg"]{filter:invert(1) grayscale(1) brightness(1.2);}
 .trustLogos img[src$=".svg"]:hover{filter:invert(0) grayscale(1);}
 
 /* hover – dalej białe (trochę jaśniejsze) */
 .trustLogos img[src="tree.svg"]:hover,
 .trustLogos img[src="consult.svg"]:hover{filter:invert(1) brightness(1.2);opacity:1;}
-
-.trustInner{max-width:840px;margin:0 auto;text-align:center;}
-
-.trustSection{padding:56px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(1200px 200px at center,rgba(124,92,255,.08),transparent);}
+.trustLogos img[src$=".svg"]{filter:invert(1) grayscale(1) brightness(1.2);}
