@@ -824,3 +824,17 @@ footer{
   .brand .t2::after{content:"Microsoft Partner";}
   .brand .t2 > *{display:none;} /* Schowaj długi oryginalny tekst */
 }
+
+.trustSection{padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(13,22,42,.20);}
+.trustLabel{text-align:center;font-size:.72rem;text-transform:uppercase;letter-spacing:2.4px;opacity:.55;margin:0 0 28px;font-weight:600;}
+.trustLogos{display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;}
+
+.trustLogos img{height:48px;width:auto;max-width:200px;object-fit:contain;opacity:.75;transition:opacity .3s,transform .3s;}
+.trustLogos img:hover{opacity:1;transform:scale(2);}
+@media(max-width:760px){.trustLogos{gap:36px;}.trustLogos img{height:40px;}}
+
+
+.trustLogos img[src="dom100.png"],
+.trustLogos img[src="car.jpg"]{filter:invert(1) grayscale(1);}
+.trustLogos img[src="dom100.png"]:hover,
+.trustLogos img[src="car.jpg"]:hover{filter:invert(0) grayscale(0);}
