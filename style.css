@@ -838,3 +838,6 @@ footer{
 .trustLogos img[src="car.jpg"]{filter:invert(1) grayscale(1);}
 .trustLogos img[src="dom100.png"]:hover,
 .trustLogos img[src="car.jpg"]:hover{filter:invert(0) grayscale(0);}
+.trustLogos img[src="hcm.png"]:hover{filter:invert(0) grayscale(0);}
+.trustLogos img[src="tree.svg"]:hover{filter:invert(0) grayscale(0);}
+.trustLogos img[src="consult.svg"]:hover{filter:invert(0) grayscale(0);}
