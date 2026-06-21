@@ -844,3 +844,9 @@ footer{
 .trustLogos img[src="tree.svg"]:hover,
 .trustLogos img[src="consult.svg"]:hover{filter:invert(1) brightness(1.2);opacity:1;}
 .trustLogos img[src$=".svg"]{filter:invert(1) grayscale(1) brightness(1.2);}
+
+.valueWrap{position:relative;display:inline-block;}
+.valueSmile{position:absolute;left:0;width:100%;bottom:-9px;height:14px;pointer-events:none;}
+
+h1{line-height:1.15;}
+.valueWrap{margin-bottom:6px;}
