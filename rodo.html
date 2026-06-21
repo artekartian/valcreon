@@ -1,51 +1,50 @@
 <!doctype html>
 <html lang="pl">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W74QBW96');</script>
-    <!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Klauzula informacyjna RODO | microsoft365.com.pl</title>
-<meta name="description" content="Klauzula informacyjna RODO – art. 13 RODO – administrator, cele przetwarzania, retencja, prawa osoby.">
+<title>Valcreon – Microsoft 365, Copilot i bezpieczeństwo dla polskich firm</title>
+<meta name="description" content="Valcreon – Value Creation Company. Oficjalny partner Microsoft w Polsce. Licencje Microsoft 365, wdrożenia, Copilot i zabezpieczenia dla MŚP. Polska faktura, polskie wsparcie.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="fav.ico">
+
+<!-- Google Analytics 4 – respektuje Consent Mode -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    'anonymize_ip': true
+  });
+</script>
+
+<style>
+</style>
 </head>
 <body>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W74QBW96"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
 <!-- ================= HEADER ================= -->
 <header>
   <div class="container nav">
-    <a class="brand" href="#">
-      <span class="logo" aria-hidden="true"></span>
-      <span>
-        <div class="t1">microsoft365.com.pl</div>
-        <div class="t2">Niezależny portal partnera Microsoft CSP</div>
-      </span>
+    <a class="brand" href="#top" aria-label="Valcreon – strona główna">
+    <img src="logo-32.png" alt="Valcreon" width="32" height="32">
+    <span class="brandText">
+    <span class="t1">Valcreon</span>
+    <span class="t2">Microsoft AI Cloud Partner</span>
+    </span>
     </a>
     <nav aria-label="Główne">
       <ul>
-        <li><a href="#copilot">Copilot</a></li>
-        <li><a href="#business">Microsoft 365</a></li>
-        <!-- <li><a href="#wybor">Który plan?</a></li> -->
-        <li><a href="#dodatki">Licencje</a></li>
-        <li><a href="#csp">Jak kupić</a></li>
-        <!-- <li><a href="#renewal">Odnowienia</a></li> -->
-        <!-- <li><a href="#faq">FAQ</a></li> -->
+        <li><a href="#obszary">Microsoft 365</a></li>
+        <li><a href="#produkty">Wdrożenia</a></li>
+        <li><a href="#marki">Platformy</a></li>
+        <li><a href="#valcreon">O nas</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
     <div class="actions">
-      <a href="#renewal" class="btn ghost">Odnów licencje</a>
+      <a href="#audit" class="btn ghost">Sprawdź gotowość</a>
       <a href="#kontakt" class="btn primary">Porozmawiajmy</a>
       <button class="hamburger" aria-label="Menu" onclick="document.getElementById('drawer').style.display='block'">
         <span></span><span></span><span></span>
@@ -53,6 +52,27 @@
     </div>
   </div>
 </header>
+
+<!-- ================= DRAWER (mobile) ================= -->
+<div class="drawer" id="drawer" onclick="if(event.target===this)this.style.display='none'">
+  <div class="panel" style="width:320px">
+    <div class="top">
+      <strong>Menu</strong>
+      <button class="btn ghost" onclick="document.getElementById('drawer').style.display='none'">Zamknij</button>
+    </div>
+    <nav class="drawerNav">
+      <a href="#obszary" onclick="document.getElementById('drawer').style.display='none'">Microsoft 365</a>
+      <a href="#produkty" onclick="document.getElementById('drawer').style.display='none'">Wdrożenia</a>
+      <a href="#marki" onclick="document.getElementById('drawer').style.display='none'">Platformy</a>
+      <a href="#valcreon" onclick="document.getElementById('drawer').style.display='none'">O nas</a>
+      <a href="#kontakt" onclick="document.getElementById('drawer').style.display='none'">Kontakt</a>
+    </nav>
+    <div class="drawerActions">
+      <a href="#audit" class="btn ghost">Sprawdź gotowość</a>
+      <a href="#kontakt" class="btn primary">Porozmawiajmy</a>
+    </div>
+  </div>
+</div>
 
 <section style="padding-top:80px;">
   <div class="container" style="max-width:880px;">
@@ -66,162 +86,211 @@
           RODO
         </span>
         <h2>Klauzula informacyjna RODO</h2>
-        <p class="lead">Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych (RODO) z dnia 27 kwietnia 2016 r. informujemy:</p>
-        <p class="fine">Ostatnia aktualizacja: 19 czerwca 2026</p>
+        <p class="lead">Zgodnie z art. 13 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO) informujemy o przetwarzaniu Twoich danych osobowych przez Valcreon Sp. z o.o.</p>
+        <p class="fine">Ostatnia aktualizacja: 21 czerwca 2026 · Wersja 1.0</p>
       </div>
     </div>
 
+    <!-- ===== 1. ADMINISTRATOR ===== -->
     <div class="card" style="margin-top:24px;">
       <h3>1. Administrator danych</h3>
       <p><strong>Valcreon Sp. z o.o.</strong><br>
       Plac Europejski 2, 00–844 Warszawa<br>
-      NIP: 5273196631, KRS: 0001211523<br>
-      E-mail w sprawach RODO: <strong>rodo@valcreon.com</strong></p>
+      NIP 5273196631, REGON 543515471, KRS 0001211523<br>
+      E–mail w sprawach RODO: <strong>rodo@valcreon.com</strong><br>
+      Telefon: +48 22 152 50 62</p>
     </div>
 
+    <!-- ===== 2. IOD ===== -->
     <div class="card alt" style="margin-top:16px;">
       <h3>2. Inspektor Ochrony Danych (IOD)</h3>
-      <p>W Valcreon Sp. z o.o. nie powołano Inspektora Ochrony Danych (nie jest to wymagane na mocy art. 37 RODO). Wszelkie sprawy RODO obsługuje administrator pod adresem <strong>rodo@valcreon.com</strong>.</p>
+      <p>W Valcreon Sp. z o.o. <strong>nie powołano Inspektora Ochrony Danych</strong> – nie jest to wymagane na podstawie art. 37 RODO. Wszelkie sprawy dotyczące przetwarzania danych obsługuje administrator pod adresem <strong>rodo@valcreon.com</strong>.</p>
     </div>
 
+    <!-- ===== 3. KATEGORIE DANYCH ===== -->
     <div class="card" style="margin-top:16px;">
-      <h3>3. Cele i podstawy prawne przetwarzania</h3>
+      <h3>3. Kategorie przetwarzanych danych</h3>
+      <p>Przetwarzamy następujące kategorie Twoich danych osobowych:</p>
+      <ul class="list">
+        <li><strong>Dane identyfikacyjne</strong> – imię, nazwisko, nazwa firmy, NIP, stanowisko.</li>
+        <li><strong>Dane kontaktowe</strong> – adres e–mail, numer telefonu, adres siedziby.</li>
+        <li><strong>Dane z zapytań</strong> – treść wiadomości, temat sprawy, liczba pracowników w firmie.</li>
+        <li><strong>Dane techniczne</strong> – adres IP, typ przeglądarki, źródło wejścia (logi serwera).</li>
+        <li><strong>Dane analityczne</strong> – statystyki ruchu (Google Analytics 4) – tylko po zgodzie.</li>
+      </ul>
+      <p class="fine"><strong>Nie przetwarzamy</strong> szczególnych kategorii danych (zdrowie, pochodzenie, poglądy) ani danych dzieci.</p>
+    </div>
+
+    <!-- ===== 4. ŹRÓDŁO DANYCH ===== -->
+    <div class="card alt" style="margin-top:16px;">
+      <h3>4. Skąd mamy Twoje dane</h3>
+      <p>Twoje dane pochodzą <strong>bezpośrednio od Ciebie</strong> – z:</p>
+      <ul class="list">
+        <li>formularza kontaktowego na valcreon.com,</li>
+        <li>e–maila wysłanego na adres web@valcreon.com lub rodo@valcreon.com,</li>
+        <li>rezerwacji spotkania (Microsoft Bookings),</li>
+        <li>kontaktu telefonicznego,</li>
+        <li>umowy zawartej z Valcreon (w przypadku Klientów).</li>
+      </ul>
+      <p>Dane techniczne i analityczne zbieramy automatycznie podczas Twojej wizyty na stronie.</p>
+    </div>
+
+    <!-- ===== 5. CELE I PODSTAWY PRAWNE ===== -->
+    <div class="card" style="margin-top:16px;">
+      <h3>5. Cele i podstawy prawne przetwarzania</h3>
       <ul class="list">
         <li><strong>Obsługa zapytania ofertowego</strong> – art. 6 ust. 1 lit. b RODO (działania przed zawarciem umowy).</li>
-        <li><strong>Realizacja umowy</strong> (sprzedaż licencji, wdrożenia, opieka) – art. 6 ust. 1 lit. b RODO.</li>
-        <li><strong>Wystawianie faktur i obowiązki podatkowe</strong> – art. 6 ust. 1 lit. c RODO (obowiązek prawny).</li>
+        <li><strong>Realizacja umowy</strong> (sprzedaż licencji, wdrożenia, opieka techniczna) – art. 6 ust. 1 lit. b RODO.</li>
+        <li><strong>Wystawianie faktur i obowiązki podatkowe</strong> – art. 6 ust. 1 lit. c RODO (obowiązek prawny – ustawa o rachunkowości, ustawa o VAT).</li>
         <li><strong>Komunikacja techniczna i wsparcie</strong> – art. 6 ust. 1 lit. f RODO (uzasadniony interes).</li>
-        <li><strong>Dochodzenie roszczeń / obrona przed nimi</strong> – art. 6 ust. 1 lit. f RODO.</li>
+        <li><strong>Statystyki ruchu (Google Analytics 4)</strong> – art. 6 ust. 1 lit. a RODO (Twoja zgoda).</li>
+        <li><strong>Bezpieczeństwo serwisu</strong> (logi, ochrona przed atakami) – art. 6 ust. 1 lit. f RODO.</li>
+        <li><strong>Dochodzenie i obrona przed roszczeniami</strong> – art. 6 ust. 1 lit. f RODO.</li>
       </ul>
     </div>
 
+    <!-- ===== 6. ODBIORCY ===== -->
     <div class="card alt" style="margin-top:16px;">
-      <h3>4. Odbiorcy danych</h3>
+      <h3>6. Odbiorcy danych</h3>
       <p>Twoje dane mogą zostać przekazane:</p>
       <ul class="list">
-        <li>podmiotom świadczącym usługi IT (hosting, poczta) – w ramach umów powierzenia,</li>
-        <li>biuru rachunkowemu obsługującemu Valcreon,</li>
-        <li>Microsoft Ireland Operations Ltd. – jako dostawcy infrastruktury chmurowej,</li>
-        <li>organom państwowym – wyłącznie na podstawie obowiązujących przepisów prawa.</li>
+        <li><strong>Microsoft Ireland Operations Ltd.</strong> – dostawca infrastruktury chmurowej (Microsoft 365, hosting poczty).</li>
+        <li><strong>Google Ireland Ltd.</strong> – dostawca usługi statystyk (tylko po zgodzie na cookies analityczne).</li>
+        <li><strong>Biuro rachunkowe</strong> obsługujące Valcreon – w zakresie księgowości.</li>
+        <li><strong>Operator hostingu</strong> strony valcreon.com.</li>
+        <li><strong>Kancelaria prawna</strong> – wyłącznie w przypadku dochodzenia lub obrony roszczeń.</li>
+        <li><strong>Organy państwowe</strong> – wyłącznie na podstawie obowiązujących przepisów prawa.</li>
       </ul>
+      <p class="fine">Wszystkie podmioty przetwarzające działają na podstawie umów powierzenia przetwarzania danych zgodnych z art. 28 RODO.</p>
     </div>
 
+    <!-- ===== 7. TRANSFER POZA EOG ===== -->
     <div class="card" style="margin-top:16px;">
-      <h3>5. Przekazywanie danych poza EOG</h3>
-      <p>Dane mogą być przetwarzane w infrastrukturze Microsoft w Unii Europejskiej (EU Data Boundary). W przypadku, gdy przetwarzanie odbywa się poza EOG, odbywa się to wyłącznie na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską (SCC).</p>
+      <h3>7. Przekazywanie danych poza Europejski Obszar Gospodarczy</h3>
+      <p>Część usługodawców (Microsoft, Google) może przetwarzać dane na serwerach poza EOG, w szczególności w USA.</p>
+      <p><strong>Podstawy prawne transferu:</strong></p>
+      <ul class="list">
+        <li><strong>EU–US Data Privacy Framework</strong> – decyzja Komisji Europejskiej z dnia 10 lipca 2023 r. (2023/1795) uznająca odpowiedni poziom ochrony danych w USA dla podmiotów zarejestrowanych w Framework. Zarówno Microsoft, jak i Google są oficjalnie zarejestrowane.</li>
+        <li><strong>Standardowe Klauzule Umowne (SCC)</strong> – dodatkowo, jako wzmocnienie ochrony.</li>
+        <li><strong>EU Data Boundary</strong> – Microsoft zobowiązał się do przechowywania danych klientów europejskich w infrastrukturze unijnej (operacyjnie). Dane wsparcia technicznego mogą być przetwarzane globalnie, na podstawie SCC.</li>
+      </ul>
+      <p class="fine">Listę podmiotów objętych Data Privacy Framework można sprawdzić pod adresem dataprivacyframework.gov.</p>
     </div>
 
+    <!-- ===== 8. OKRES PRZECHOWYWANIA ===== -->
     <div class="card alt" style="margin-top:16px;">
-      <h3>6. Okres przechowywania danych</h3>
+      <h3>8. Okres przechowywania danych</h3>
       <ul class="list">
         <li><strong>Dane z zapytań ofertowych</strong> – 12 miesięcy od ostatniego kontaktu.</li>
-        <li><strong>Dane klientów (umowy)</strong> – przez czas trwania umowy + 5 lat (obowiązek księgowy art. 86 § 1 Ordynacji podatkowej).</li>
-        <li><strong>Faktury</strong> – 5 lat od końca roku, w którym powstał obowiązek podatkowy.</li>
-        <li><strong>Logi serwera</strong> – do 90 dni.</li>
+        <li><strong>Dane klientów (umowy, korespondencja)</strong> – przez okres trwania umowy + 3 lata (termin przedawnienia roszczeń gospodarczych zgodnie z art. 118 Kodeksu cywilnego).</li>
+        <li><strong>Faktury i dokumenty księgowe</strong> – 5 lat od końca roku, w którym powstał obowiązek podatkowy (art. 74 ust. 2 ustawy o rachunkowości, art. 112 ustawy o VAT).</li>
+        <li><strong>Logi serwera</strong> – maksymalnie 90 dni.</li>
+        <li><strong>Dane analityczne (Google Analytics)</strong> – 14 miesięcy w panelu GA, następnie dane agregowane.</li>
+        <li><strong>Zgody na cookies</strong> – 12 miesięcy od wyrażenia.</li>
       </ul>
     </div>
 
+    <!-- ===== 9. TWOJE PRAWA ===== -->
     <div class="card" style="margin-top:16px;">
-      <h3>7. Prawa osoby, której dane dotyczą</h3>
+      <h3>9. Prawa osoby, której dane dotyczą</h3>
       <p>Przysługują Ci następujące prawa:</p>
       <ul class="list">
-        <li><strong>Prawo dostępu</strong> do danych (art. 15 RODO),</li>
-        <li><strong>Prawo do sprostowania</strong> (art. 16 RODO),</li>
-        <li><strong>Prawo do usunięcia</strong> – „prawo do bycia zapomnianym" (art. 17 RODO),</li>
-        <li><strong>Prawo do ograniczenia przetwarzania</strong> (art. 18 RODO),</li>
-        <li><strong>Prawo do przenoszenia danych</strong> (art. 20 RODO),</li>
-        <li><strong>Prawo sprzeciwu</strong> (art. 21 RODO),</li>
-        <li><strong>Prawo do cofnięcia zgody</strong> – w dowolnym momencie, bez wpływu na zgodność przetwarzania sprzed cofnięcia,</li>
+        <li><strong>Prawo dostępu</strong> do swoich danych (art. 15 RODO).</li>
+        <li><strong>Prawo do sprostowania</strong> danych (art. 16 RODO).</li>
+        <li><strong>Prawo do usunięcia</strong> – „prawo do bycia zapomnianym" (art. 17 RODO).</li>
+        <li><strong>Prawo do ograniczenia przetwarzania</strong> (art. 18 RODO).</li>
+        <li><strong>Prawo do przenoszenia danych</strong> (art. 20 RODO).</li>
+        <li><strong>Prawo sprzeciwu</strong> wobec przetwarzania opartego na uzasadnionym interesie (art. 21 RODO).</li>
+        <li><strong>Prawo do cofnięcia zgody</strong> w dowolnym momencie (art. 7 ust. 3 RODO) – bez wpływu na zgodność przetwarzania sprzed cofnięcia. Dotyczy w szczególności zgody na cookies analityczne, którą możesz wycofać klikając ikonę ciasteczek w lewym dolnym rogu strony.</li>
         <li><strong>Prawo do wniesienia skargi</strong> do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00–193 Warszawa, uodo.gov.pl).</li>
       </ul>
+      <p>Aby skorzystać z któregokolwiek prawa – napisz na <strong>rodo@valcreon.com</strong>. Odpowiemy w terminie do <strong>30 dni</strong> (art. 12 ust. 3 RODO).</p>
     </div>
 
+    <!-- ===== 10. DOBROWOLNOŚĆ ===== -->
     <div class="card alt" style="margin-top:16px;">
-      <h3>8. Dobrowolność podania danych</h3>
+      <h3>10. Dobrowolność podania danych</h3>
       <p>Podanie danych jest <strong>dobrowolne</strong>, ale niezbędne do:</p>
       <ul class="list">
         <li>udzielenia odpowiedzi na zapytanie ofertowe,</li>
         <li>zawarcia i realizacji umowy,</li>
-        <li>wystawienia faktury.</li>
+        <li>wystawienia faktury VAT.</li>
       </ul>
-      <p>Brak podania danych uniemożliwi nawiązanie kontaktu lub świadczenie usług.</p>
+      <p>Brak podania niezbędnych danych uniemożliwi nawiązanie kontaktu lub świadczenie usług.</p>
+      <p>Zgoda na cookies analityczne i marketingowe jest <strong>w pełni dobrowolna</strong> – jej brak nie wpływa na możliwość korzystania ze strony.</p>
     </div>
 
+    <!-- ===== 11. PROFILOWANIE ===== -->
     <div class="card" style="margin-top:16px;">
-      <h3>9. Profilowanie i decyzje zautomatyzowane</h3>
-      <p>Valcreon Sp. z o.o. <strong>nie podejmuje decyzji w sposób zautomatyzowany</strong>, w tym nie dokonuje profilowania, o którym mowa w art. 22 RODO.</p>
+      <h3>11. Profilowanie i decyzje zautomatyzowane</h3>
+      <p>Valcreon Sp. z o.o. <strong>nie podejmuje wobec Ciebie decyzji w sposób zautomatyzowany</strong> w rozumieniu art. 22 RODO, w tym <strong>nie dokonuje profilowania</strong> wpływającego na Twoją sytuację prawną lub gospodarczą.</p>
+      <p>Każda decyzja dotycząca obsługi, oferty czy zawarcia umowy podejmowana jest przez człowieka.</p>
     </div>
 
-    <div class="bigCta" style="margin-top:24px;">
-      <h3>Chcesz skorzystać ze swoich praw?</h3>
-      <p>Napisz na <strong>rodo@valcreon.com</strong> – odpowiemy w terminie do 30 dni (art. 12 ust. 3 RODO).</p>
-      <a href="mailto:rodo@valcreon.com" class="btn primary">Napisz w sprawie RODO</a>
+    <!-- ===== CTA ===== -->
+     <div class="bigCta" style="margin-top:24px;">
+    <h3>Masz pytania o Regulamin?</h3>
+    <p>Napisz na <strong>web@valcreon.com</strong> – odpowiemy w ciągu 14 dni.</p>
+    <a href="mailto:web@valcreon.com?subject=Regulamin%20%E2%80%93%20zapytanie%20z%20valcreon.com&body=Dzie%C5%84%20dobry%2C%0D%0A%0D%0Apisz%C4%99%20w%20sprawie%20Regulaminu%20serwisu%20valcreon.com%3A%0D%0A%0D%0AImi%C4%99%20i%20nazwisko%3A%0D%0AFirma%3A%0D%0AOpis%20sprawy%3A%0D%0A%0D%0APozdrawiam." class="btn primary">
+        <span class="ico ico-sm">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><polyline points="4 4 12 13 20 4"/></svg>
+        </span>
+        Napisz do nas
+    </a>
     </div>
 
   </div>
 </section>
 
+
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
-
-    <!-- 🔥 PRE-FOOTER CTA -->
     <div class="footCta">
       <div>
-        <span class="pill">
-          <span class="dot"></span> Bezpłatny audyt licencji
-        </span>
-        <h3>Sprawdź, ile Twoja firma realnie traci na Microsoft 365</h3>
-        <p>15 minut. Konkret w mailu: plan, liczba licencji, cena. Bez umów, bez audytów na 3 tygodnie.</p>
+        <span class="pill"><span class="dot"></span> Sprawdź gotowość firmy</span>
+        <h3>Microsoft 365 ma działać – nie tylko być kupiony</h3>
+        <p>15 minut rozmowy. Konkret w mailu: rekomendowany program, zakres prac, kolejne kroki. Bez umów, bez audytów na 3 tygodnie.</p>
       </div>
     </div>
 
-    <!-- GRID: 3 kolumny -->
     <div class="footGridV2">
-
-      <!-- KOL 1: Brand -->
       <div>
         <div class="footBrand">
-          <img src="logo-32.png" alt="microsoftdlafirm.pl">
+          <img src="logo-32.png" alt="Valcreon">
           <div>
-            <div class="footBrandName">microsoftdlafirm.pl</div>
-            <div class="muted footBrandTag">Microsoft 365 · Copilot · Security · Backup</div>
+            <div class="footBrandName">Valcreon</div>
+            <div class="muted footBrandTag">Value Creation Company · Microsoft Partner</div>
           </div>
         </div>
         <p class="fine">
-          Niezależny portal partnera Microsoft CSP.<br>
-          Serwis prowadzony przez Valcreon&nbsp;Sp.&nbsp;z o.o.<br>
+          Microsoft 365 · Copilot · Bezpieczeństwo · Backup<br>
+          Strona prowadzona przez Valcreon&nbsp;Sp.&nbsp;z&nbsp;o.o.<br>
           Microsoft 365, Copilot, Teams to zastrzeżone znaki towarowe Microsoft.
         </p>
       </div>
-
-      <!-- KOL 2: Licencje -->
       <div>
-        <h4 class="footTitle">Licencje</h4>
+        <h4 class="footTitle">Microsoft 365</h4>
         <ul class="footList">
-          <li><a href="#copilot">Microsoft 365 + Copilot</a></li>
-          <li><a href="#business">Microsoft 365 Business</a></li>
-          <li><a href="#wybor">Który plan wybrać?</a></li>
-          <li><a href="#dodatki">Licencje i dodatki</a></li>
+          <li><a href="#obszary">Sprzedaż licencji</a></li>
+          <li><a href="#obszary">Wdrożenia Microsoft 365</a></li>
+          <li><a href="#obszary">Wdrożenia Copilot</a></li>
+          <li><a href="#obszary">Wdrożenia zabezpieczeń</a></li>
         </ul>
       </div>
-
-      <!-- KOL 3: Jesteś już w Microsoft? -->
       <div>
-        <h4 class="footTitle">Jesteś już w Microsoft?</h4>
+        <h4 class="footTitle">Programy Valcreon</h4>
         <ul class="footList">
-          <li><a href="#csp">CSP vs Direct vs Perpetual</a></li>
-          <li><a href="#renewal">Renewal / Odnowienie</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#valcreon">Valcreon CSP Partner</a></li>
+          <li><a href="#produkty">M365 ONE</a></li>
+          <li><a href="#produkty">Cyber ONE</a></li>
+          <li><a href="#produkty">Cloud Admin</a></li>
+          <li><a href="#audit">Mini audyt</a></li>
         </ul>
       </div>
-
     </div>
 
-    <!-- DOLNY PASEK -->
     <div class="footBottom">
-      <div class="fine">© <span id="y"></span> Valcreon Sp. z o.o. · NIP 5273196631 · Wszelkie prawa zastrzeżone.</div>
+      <div class="fine">© <span id="y"></span> Valcreon Sp. z o.o. · NIP 5273196631 · KRS 0001211523 · Wszelkie prawa zastrzeżone.</div>
       <div class="footLinks">
         <a href="/politykaprywatnosci.html">Polityka prywatności</a>
         <span>·</span>
@@ -230,11 +299,236 @@
         <a href="/rodo.html">RODO</a>
       </div>
     </div>
-
   </div>
 </footer>
 
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+<!-- JS dla formularza -->
+<script>
+function sendQuickForm(e){
+  e.preventDefault();
+  const firma  = document.getElementById('qf_firma').value.trim();
+  const email  = document.getElementById('qf_email').value.trim();
+  const users  = document.getElementById('qf_users').value.trim();
+  const topic  = document.getElementById('qf_topic').value;
+  const to      = 'web@valcreon.com';
+  const subject = `${topic} – zapytanie z valcreon.com`;
+  const body =
+`Dzień dobry,
+jesteśmy zainteresowani: ${topic}.
+
+Firma: ${firma}
+E-mail kontaktowy: ${email}
+Liczba pracowników: ${users}
+
+Proszę o kontakt z propozycją zakresu i kolejnych kroków.
+Dziękuję.`;
+  window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return false;
+}
+</script>
+
+<!-- JS dla mini-audytu -->
+<script>
+(function(){
+  const checks = document.querySelectorAll('.auditCheck');
+  const scoreEl = document.getElementById('score');
+  const meterEl = document.getElementById('meterBar');
+  const resultEl = document.getElementById('result');
+  const resetBtn = document.getElementById('resetAudit');
+
+  function update(){
+    const total = checks.length;
+    const checked = Array.from(checks).filter(c=>c.checked).length;
+    const risk = Math.round((checked/total)*100);
+    const readiness = 100 - risk;
+    scoreEl.textContent = checked===0 ? '—' : readiness + '%';
+    meterEl.style.width = (checked===0 ? 0 : readiness) + '%';
+
+    if(checked===0){
+      resultEl.innerHTML = '<strong>Wskazówka:</strong> zaznacz checklistę, aby zobaczyć ocenę i rekomendację.';
+    } else if(readiness>=80){
+      resultEl.innerHTML = '<strong>Świetnie.</strong> Twoja firma jest gotowa na Copilot i scenariusze AI. Możemy od razu wdrażać Microsoft 365 Copilot z mierzalnymi efektami.';
+    } else if(readiness>=50){
+      resultEl.innerHTML = '<strong>Solidnie, ale jest co poprawić.</strong> Rekomendujemy program <strong>Cyber–ONE</strong> – uszczelnimy dostęp, urządzenia i ochronę danych, potem Copilot.';
+    } else if(readiness>=25){
+      resultEl.innerHTML = '<strong>Spore ryzyko.</strong> Zaczynamy od programu <strong>M365–ONE</strong> – podstawy: MFA, antywirus, polityki poczty. To 2–3 tygodnie pracy.';
+    } else {
+      resultEl.innerHTML = '<strong>Wysokie ryzyko.</strong> Potrzebny pełny program <strong>M365–ONE → Cyber–ONE</strong> – zbudujemy bezpieczne środowisko od zera, krok po kroku.';
+    }
+  }
+
+  checks.forEach(c=>c.addEventListener('change',update));
+  if(resetBtn){
+    resetBtn.addEventListener('click',()=>{
+      checks.forEach(c=>c.checked=false);
+      update();
+    });
+  }
+  update();
+})();
+</script>
+
+<!-- ================= COOKIE BANNER ================= -->
+<div id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc">
+  <div class="cookieHead">
+    <div class="cookieIco">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10c0-.46-.03-.92-.1-1.36a4 4 0 0 1-5.54-5.54A10 10 0 0 0 12 2z"/><circle cx="8.5" cy="10.5" r="1"/><circle cx="14" cy="14" r="1"/><circle cx="10" cy="16" r="1"/></svg>
+    </div>
+    <div>
+      <div id="cookieTitle" class="cookieTitle">Ciasteczka i prywatność</div>
+      <p id="cookieDesc" class="cookieDesc">
+        Używamy plików cookies, aby strona działała prawidłowo, mierzyć ruch (Google Analytics) i ulepszać treści. Możesz wybrać, na co się zgadzasz. Szczegóły w
+        <a href="/politykaprywatnosci.html">polityce prywatności</a>.
+      </p>
+    </div>
+  </div>
+  <div class="cookieActions">
+    <button class="cookieBtn primary" onclick="acceptAllCookies()">Akceptuj wszystkie</button>
+    <button class="cookieBtn" onclick="acceptNecessaryCookies()">Tylko niezbędne</button>
+    <button class="cookieBtn" onclick="openCookieSettings()">Ustawienia</button>
+    <button class="cookieBtn settings" onclick="openCookieSettings()" style="display:none;">Dostosuj wybór</button>
+  </div>
+</div>
+
+<!-- ================= COOKIE SETTINGS MODAL ================= -->
+<div id="cookieModal" role="dialog" aria-labelledby="cookieModalTitle">
+  <div class="cookieModalBox">
+    <h3 id="cookieModalTitle">Ustawienia ciasteczek</h3>
+    <p>Wybierz, na które kategorie cookies wyrażasz zgodę. Możesz zmienić swój wybór w każdej chwili klikając ikonę w lewym dolnym rogu.</p>
+
+    <div class="cookieCategory">
+      <div class="cookieCategoryHead">
+        <div>
+          <strong>Niezbędne</strong>
+          <p>Wymagane do działania strony – formularze, sesja, bezpieczeństwo. Nie można ich wyłączyć.</p>
+        </div>
+        <input type="checkbox" class="cookieToggle" checked disabled aria-label="Niezbędne – zawsze włączone">
+      </div>
+    </div>
+
+    <div class="cookieCategory">
+      <div class="cookieCategoryHead">
+        <div>
+          <strong>Analityczne (Google Analytics 4)</strong>
+          <p>Pomagają zrozumieć, jak korzystasz ze strony – anonimowo, bez identyfikacji osobowej. Dzięki nim ulepszamy treści.</p>
+        </div>
+        <input type="checkbox" class="cookieToggle" id="cookieAnalytics" aria-label="Analityczne">
+      </div>
+    </div>
+
+    <div class="cookieCategory">
+      <div class="cookieCategoryHead">
+        <div>
+          <strong>Marketingowe</strong>
+          <p>Pozwalają pokazywać Ci trafniejsze reklamy Valcreon w innych miejscach (Meta, LinkedIn). Wykorzystywane okazjonalnie.</p>
+        </div>
+        <input type="checkbox" class="cookieToggle" id="cookieMarketing" aria-label="Marketingowe">
+      </div>
+    </div>
+
+    <div class="cookieModalActions">
+      <button class="cookieBtn" onclick="closeCookieSettings()">Anuluj</button>
+      <button class="cookieBtn primary" onclick="saveCookieSettings()">Zapisz wybór</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FLOATING REOPEN ICON ================= -->
+<button id="cookieReopen" onclick="reopenCookieBanner()" aria-label="Ustawienia ciasteczek" title="Ustawienia ciasteczek">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10c0-.46-.03-.92-.1-1.36a4 4 0 0 1-5.54-5.54A10 10 0 0 0 12 2z"/><circle cx="8.5" cy="10.5" r="1"/><circle cx="14" cy="14" r="1"/><circle cx="10" cy="16" r="1"/></svg>
+</button>
+
+<!-- ================= COOKIE LOGIC ================= -->
+<script>
+(function(){
+  const CONSENT_KEY='valcreon_cookie_consent';
+  const CONSENT_VERSION='1';
+  const CONSENT_DAYS=365;
+
+  // Google Consent Mode v2 – default: deny all
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('consent','default',{
+    'analytics_storage':'denied',
+    'ad_storage':'denied',
+    'ad_user_data':'denied',
+    'ad_personalization':'denied',
+    'functionality_storage':'granted',
+    'security_storage':'granted'
+  });
+
+  function getStoredConsent(){
+    try{
+      const raw=localStorage.getItem(CONSENT_KEY);
+      if(!raw) return null;
+      const data=JSON.parse(raw);
+      if(data.v!==CONSENT_VERSION) return null;
+      if(Date.now()-data.t > CONSENT_DAYS*24*60*60*1000) return null;
+      return data;
+    }catch(e){return null;}
+  }
+
+  function saveConsent(analytics,marketing){
+    const data={v:CONSENT_VERSION,t:Date.now(),analytics:analytics,marketing:marketing};
+    localStorage.setItem(CONSENT_KEY,JSON.stringify(data));
+    applyConsent(analytics,marketing);
+    document.getElementById('cookieBanner').classList.remove('show');
+    document.getElementById('cookieModal').classList.remove('show');
+    document.getElementById('cookieReopen').classList.add('show');
+  }
+
+  function applyConsent(analytics,marketing){
+    gtag('consent','update',{
+      'analytics_storage':analytics?'granted':'denied',
+      'ad_storage':marketing?'granted':'denied',
+      'ad_user_data':marketing?'granted':'denied',
+      'ad_personalization':marketing?'granted':'denied'
+    });
+  }
+
+  window.acceptAllCookies=function(){saveConsent(true,true);};
+  window.acceptNecessaryCookies=function(){saveConsent(false,false);};
+  window.openCookieSettings=function(){
+    const stored=getStoredConsent();
+    document.getElementById('cookieAnalytics').checked=stored?stored.analytics:false;
+    document.getElementById('cookieMarketing').checked=stored?stored.marketing:false;
+    document.getElementById('cookieModal').classList.add('show');
+  };
+  window.closeCookieSettings=function(){
+    document.getElementById('cookieModal').classList.remove('show');
+  };
+  window.saveCookieSettings=function(){
+    const a=document.getElementById('cookieAnalytics').checked;
+    const m=document.getElementById('cookieMarketing').checked;
+    saveConsent(a,m);
+  };
+  window.reopenCookieBanner=function(){
+    document.getElementById('cookieReopen').classList.remove('show');
+    document.getElementById('cookieBanner').classList.add('show');
+  };
+
+  // Init on page load
+  document.addEventListener('DOMContentLoaded',function(){
+    const stored=getStoredConsent();
+    if(stored){
+      applyConsent(stored.analytics,stored.marketing);
+      document.getElementById('cookieReopen').classList.add('show');
+    }else{
+      setTimeout(function(){
+        document.getElementById('cookieBanner').classList.add('show');
+      },800);
+    }
+  });
+
+  // Close modal on backdrop click
+  document.getElementById('cookieModal').addEventListener('click',function(e){
+    if(e.target===this) closeCookieSettings();
+  });
+})();
+</script>
 
 </body>
 </html>
