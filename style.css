@@ -773,7 +773,7 @@ footer{
   .brand .t2{display:none;}
   .brand .t1{font-size:15px;}
 }
-.sectionTitle h2 .ico,.sectionTitle h2 .ico-lg{margin-top:.15em;}
+.sectionTitle h2 .ico,.sectionTitle h2 .ico-lg{margin-top:.35em;}
 
 @media(max-width:600px){
   .proofItem{flex-direction:column;align-items:flex-start;gap:14px;padding:18px;}
