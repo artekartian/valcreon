@@ -847,3 +847,5 @@ footer{
 /* hover – dalej białe (trochę jaśniejsze) */
 .trustLogos img[src="tree.svg"]:hover,
 .trustLogos img[src="consult.svg"]:hover{filter:invert(1) brightness(1.2);opacity:1;}
+
+.trustInner{max-width:900px;margin:0 auto;text-align:center;}
