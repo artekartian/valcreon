@@ -164,7 +164,7 @@ h1{margin:14px 0 10px;font-size:clamp(30px,3.4vw,46px);line-height:1.10;letter-s
 /* --- Sections --- */
 section{padding:56px 0;}
 .sectionTitle{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
-.sectionTitle h2{display:flex;align-items:center;gap:10px;}
+.sectionTitle h2{display:flex;align-items:flex-start;gap:10px;}
 h2{margin:0;font-size:24px;letter-spacing:-.4px;font-weight:800;}
 .lead{margin:6px 0 0;color:var(--muted);max-width:75ch;line-height:1.6;}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;}
@@ -345,6 +345,7 @@ footer{
   .ctaRow{display:flex;flex-direction:row;gap:10px;}
   .ctaRow .btn{flex:1 1 0;justify-content:center;}
 }
+
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto;}}
 
 /* --- Copilot + Pricecards --- */
@@ -757,3 +758,32 @@ footer{
 #cookieReopen:hover{transform:scale(1.05);border-color:rgba(124,92,255,.50);}
 #cookieReopen.show{display:flex;}
 #cookieReopen svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ===== MOBILE FIXES ===== */
+@media(max-width:600px){
+  header .container.nav{padding-left:16px;padding-right:16px;}
+  .container{padding-left:16px;padding-right:16px;}
+  .brand .t2{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px;display:block;}
+  .ctaRow{flex-direction:column;gap:10px;}
+  .ctaRow .btn{width:100%;justify-content:center;white-space:nowrap;}
+  .heroCard{padding:24px 20px;}
+  h1{font-size:clamp(26px,7vw,34px);}
+}
+@media(max-width:380px){
+  .brand .t2{display:none;}
+  .brand .t1{font-size:15px;}
+}
+.sectionTitle h2 .ico,.sectionTitle h2 .ico-lg{margin-top:.15em;}
+
+@media(max-width:600px){
+  .proofItem{flex-direction:column;align-items:flex-start;gap:14px;padding:18px;}
+  .proofLogo{width:56px;height:56px;}
+  .proofText strong{font-size:.95rem;}
+  .proofText p{font-size:.82rem;}
+}
+
+@media(max-width:820px){
+  #kontakt .card.alt > div[style*="grid-template-columns"]{grid-template-columns:1fr !important;gap:1.5rem !important;}
+  #kontakt #quickForm{width:100%;max-width:100%;}
+  #kontakt #quickForm input,#kontakt #quickForm select,#kontakt #quickForm button{width:100%;max-width:100%;box-sizing:border-box;}
+}
