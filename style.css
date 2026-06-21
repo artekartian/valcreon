@@ -829,8 +829,10 @@ footer{
 .trustLabel{text-align:center;font-size:.72rem;text-transform:uppercase;letter-spacing:2.4px;opacity:.55;margin:0 0 28px;font-weight:600;}
 .trustLogos{display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;}
 
-.trustLogos img{height:48px;width:auto;max-width:200px;object-fit:contain;opacity:.75;transition:opacity .3s,transform .3s;}
-.trustLogos img:hover{opacity:1;transform:scale(1.4);}
+
+.trustLogos img{height:48px;width:auto;max-width:200px;object-fit:contain;filter:grayscale(1) brightness(1.4);opacity:.65;transition:opacity .3s ease,filter .3s ease,transform .3s ease;}
+.trustLogos img:hover{opacity:1;filter:grayscale(0) brightness(1);transform:scale(1.2);}
+
 @media(max-width:760px){.trustLogos{gap:36px;}.trustLogos img{height:40px;}}
 
 
