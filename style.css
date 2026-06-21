@@ -830,7 +830,7 @@ footer{
 .trustLogos{display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;}
 
 .trustLogos img{height:48px;width:auto;max-width:200px;object-fit:contain;opacity:.75;transition:opacity .3s,transform .3s;}
-.trustLogos img:hover{opacity:1;transform:scale(1.6);}
+.trustLogos img:hover{opacity:1;transform:scale(1.4);}
 @media(max-width:760px){.trustLogos{gap:36px;}.trustLogos img{height:40px;}}
 
 
