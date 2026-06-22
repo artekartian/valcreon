@@ -400,7 +400,7 @@ footer{
 .footLinks{display:flex;gap:10px;align-items:center;font-size:.85rem;opacity:.7;}
 .footLinks a{color:var(--text);text-decoration:none;}
 .footLinks a:hover{color:var(--accent2);}
-.footGridV2{grid-template-columns:1.5fr 1fr 1fr;}
+@media(min-width:961px){.footGridV2{grid-template-columns:1.5fr 1fr 1fr;}}
 
 .frontierBanner{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 28px;padding:24px;border-radius:20px;background:linear-gradient(135deg,rgba(124,92,255,.10),rgba(90,167,255,.06));border:1px solid rgba(124,92,255,.22);}
 .fbItem{display:flex;gap:14px;align-items:flex-start;}
