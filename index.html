@@ -1140,30 +1140,131 @@ Dziękuję.`;
 <script>
 (function(){
   const checks = document.querySelectorAll('.auditCheck');
-  const scoreEl = document.getElementById('score');
-  const meterEl = document.getElementById('meterBar');
-  const resultEl = document.getElementById('result');
+  const fillEl = document.getElementById('maturityFill');
+  const stops = document.querySelectorAll('.maturityStop');
+  const labels = document.querySelectorAll('.maturityLabels span');
+  const diagEl = document.getElementById('diagLine');
+  const pathEl = document.getElementById('pathWrap');
+  const badgeEl = document.getElementById('stageBadge');
   const resetBtn = document.getElementById('resetAudit');
+  const flagBackup = document.getElementById('flagBackup');
+  const ctaMain = document.getElementById('ctaMain');
+
+  const AREAS = {
+    licencje:       { name:'Licencje',       url:'https://microsoft365.com.pl' },
+    wdrozenie:      { name:'Wdrożenie',      url:'https://microsoftdlafirm.pl' },
+    zabezpieczenia: { name:'Zabezpieczenia', url:'https://onesecurity.pl' },
+    copilot:        { name:'Copilot',        url:'https://m365withcopilot.com' }
+  };
+
+  const STAGE_ORDER = ['licencje','wdrozenie','zabezpieczenia','copilot'];
+
+  const STAGES = [
+    { fill:10, badge:'Etap 0: Start',              labelIdx:0 },
+    { fill:25, badge:'Etap 1: Licencje',           labelIdx:1 },
+    { fill:50, badge:'Etap 2: Wdrożenie',          labelIdx:2 },
+    { fill:62, badge:'Etap 2,5: MFA jest, brak reszty', labelIdx:3 },
+    { fill:75, badge:'Etap 3: Zabezpieczenia',     labelIdx:3 },
+    { fill:100,badge:'Etap 4: Copilot – dojrzałe środowisko', labelIdx:4 }
+  ];
+
+  function getAnswers(){
+    const a = {};
+    checks.forEach(c => a[c.dataset.q] = c.checked);
+    return a;
+  }
+
+  function computeStage(a){
+    const any = Object.values(a).some(v=>v);
+    if(!any) return -1;
+    if(a['1']) return 0;
+    if(a['2']) return 1;
+    if(a['3']) return 2;
+    if(a['4']) return 3;
+    if(a['6']) return 4;
+    return 5;
+  }
+
+  function computePath(a){
+    const path = [];
+    if(a['1']) path.push('licencje');
+    if(a['2']) path.push('wdrozenie');
+    if(a['3'] || a['4']) path.push('zabezpieczenia');
+    if(a['6']) path.push('copilot');
+    return path;
+  }
+
+  function renderPath(path){
+    pathEl.innerHTML = '';
+    if(path.length === 0) return;
+    path.forEach((key, i) => {
+      const area = AREAS[key];
+      const chip = document.createElement('a');
+      chip.className = 'pathChip' + (i === 0 ? ' first' : '');
+      chip.href = area.url;
+      chip.target = '_blank';
+      chip.rel = 'noopener';
+      chip.innerHTML = '<span class="num">' + (i+1) + '</span>' + area.name;
+      pathEl.appendChild(chip);
+      if(i < path.length - 1){
+        const arr = document.createElement('span');
+        arr.className = 'pathArrow';
+        arr.textContent = '→';
+        pathEl.appendChild(arr);
+      }
+    });
+  }
+
+  function markStops(labelIdx){
+    stops.forEach((s,i)=> s.classList.toggle('active', i === labelIdx));
+    labels.forEach((l,i)=> l.classList.toggle('active', i === labelIdx));
+  }
+
+  function clearStops(){
+    stops.forEach(s=>s.classList.remove('active'));
+    labels.forEach(l=>l.classList.remove('active'));
+  }
 
   function update(){
-    const total = checks.length;
-    const checked = Array.from(checks).filter(c=>c.checked).length;
-    const risk = Math.round((checked/total)*100);
-    const readiness = 100 - risk;
-    scoreEl.textContent = checked===0 ? '—' : readiness + '%';
-    meterEl.style.width = (checked===0 ? 0 : readiness) + '%';
+    const a = getAnswers();
+    const stageIdx = computeStage(a);
+    const path = computePath(a);
 
-    if(checked===0){
-      resultEl.innerHTML = '<strong>Wskazówka:</strong> zaznacz checklistę, aby zobaczyć ocenę i rekomendację.';
-    } else if(readiness>=80){
-      resultEl.innerHTML = '<strong>Świetnie.</strong> Twoja firma jest gotowa na Copilot i scenariusze AI. Możemy od razu wdrażać Microsoft 365 Copilot z mierzalnymi efektami.';
-    } else if(readiness>=50){
-      resultEl.innerHTML = '<strong>Solidnie, ale jest co poprawić.</strong> Rekomendujemy program <strong>Cyber ONE</strong> – uszczelnimy dostęp, urządzenia i ochronę danych, potem Copilot.';
-    } else if(readiness>=25){
-      resultEl.innerHTML = '<strong>Spore ryzyko.</strong> Zaczynamy od programu <strong>M365 ONE</strong> – podstawy: MFA, konfiguracja, polityki poczty. Warto zacząć od zaraz.';
+    if(stageIdx === -1){
+      fillEl.style.width = '0%';
+      clearStops();
+      badgeEl.textContent = 'Zaznacz pytania, aby zobaczyć etap';
+      diagEl.innerHTML = '<strong>Wskazówka:</strong> zaznacz pytania, aby zobaczyć rekomendowaną ścieżkę.';
+      pathEl.innerHTML = '';
+      ctaMain.href = '#kontakt';
+      ctaMain.textContent = 'Chcę plan działania';
     } else {
-      resultEl.innerHTML = '<strong>Wysokie ryzyko.</strong> Potrzebny pełny program <strong>M365 ONE → Cyber ONE</strong> – zbudujemy bezpieczne środowisko od zera, krok po kroku.';
+      const stage = STAGES[stageIdx];
+      fillEl.style.width = stage.fill + '%';
+      markStops(stage.labelIdx);
+      badgeEl.textContent = stage.badge;
+
+      if(path.length === 0){
+        diagEl.innerHTML = '<strong>Środowisko wygląda dojrzale.</strong> Porozmawiajmy o optymalizacji i scenariuszach AI.';
+      } else if(path.length === 1){
+        diagEl.innerHTML = '<strong>Wykryliśmy 1 obszar do uporządkowania:</strong>';
+      } else {
+        diagEl.innerHTML = '<strong>Wykryliśmy ' + path.length + ' obszary do uporządkowania w tej kolejności:</strong>';
+      }
+
+      renderPath(path);
+
+      if(path.length > 0){
+        const firstArea = AREAS[path[0]];
+        ctaMain.href = firstArea.url;
+        ctaMain.textContent = 'Zacznij od: ' + firstArea.name;
+      } else {
+        ctaMain.href = '#kontakt';
+        ctaMain.textContent = 'Chcę plan działania';
+      }
     }
+
+    flagBackup.classList.toggle('on', !!a['5']);
   }
 
   checks.forEach(c=>c.addEventListener('change',update));
