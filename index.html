@@ -502,97 +502,127 @@
   </div>
 </section>
 
-<!-- ================= MINI AUDIT ================= -->
+<!-- ================= MINI AUDIT V3 ================= -->
 <section id="audit">
   <div class="container">
     <div class="sectionTitle">
       <div>
-        <span class="pill" style="margin-bottom:10px;"><span class="dot" style="background:var(--accent2);box-shadow:0 0 0 3px rgba(124,92,255,.14);"></span> Samoocena</span>
+        <span class="pill" style="margin-bottom:10px;"><span class="dot" style="background:var(--accent2);box-shadow:0 0 0 3px rgba(124,92,255,.14);"></span> Mini–audyt</span>
         <h2>
           <span class="ico ico-lg" style="color:var(--accent2)">
-            <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
           </span>
-          Mini–audyt: Czy Twoja firma jest gotowa na Microsoft 365 i AI?
+          Gdzie jest Twoja firma w Microsoft 365?
         </h2>
-        <p class="lead">Zaznacz to, co u Ciebie występuje. Dostaniesz prostą ocenę i następny krok – bez zapisywania się do newslettera.</p>
+        <p class="lead">Zaznacz to, co u Ciebie występuje. Pokażemy etap dojrzałości i ścieżkę obszarów do uporządkowania.</p>
       </div>
     </div>
 
     <div class="audit">
       <div class="card alt">
-        <h3>Lista kontrolna</h3>
+        
+       <!-- <div class="auditIntro">
+          <h3>Zaznacz to, co u Ciebie występuje</h3>
+          <p class="muted">Każde zaznaczenie pokaże Ci, na jakim etapie Microsoft 365 jest Twoja firma i od czego zacząć. Bez zapisów, bez kontaktu.</p>
+        </div> -->
 
         <label class="check">
-          <input type="checkbox" class="auditCheck" />
+          <input type="checkbox" class="auditCheck" data-q="1" />
           <span>
-            <strong>Brak backupu Microsoft 365</strong><br>
-            <span class="muted">Nie mam realnej kopii danych i testów odtwarzania.</span>
+            <strong>Kupujemy licencje u rejestratora lub kartą</strong><br>
+            <span class="muted">home.pl, nazwa.pl, OVH albo karta bezpośrednio w Microsoft.</span>
           </span>
         </label>
 
         <label class="check">
-          <input type="checkbox" class="auditCheck" />
+          <input type="checkbox" class="auditCheck" data-q="2" />
           <span>
-            <strong>Brak MFA lub słabe MFA</strong><br>
-            <span class="muted">Logowanie może być przejęte (phishing, wycieki haseł).</span>
+            <strong>Poczta i pliki firmy są rozproszone</strong><br>
+            <span class="muted">Część w Google, część w skrzynkach IMAP, pliki na dyskach lokalnych.</span>
           </span>
         </label>
 
         <label class="check">
-          <input type="checkbox" class="auditCheck" />
+          <input type="checkbox" class="auditCheck" data-q="3" />
           <span>
-            <strong>Dane są w chaosie</strong><br>
-            <span class="muted">Pliki są wszędzie, brak standardów i uprawnień.</span>
+            <strong>Nie wiem, co to uwierzytelnienie wieloskładnikowe</strong><br>
+            <span class="muted">MFA nie jest u nas tematem, logujemy się hasłem.</span>
           </span>
         </label>
 
         <label class="check">
-          <input type="checkbox" class="auditCheck" />
+          <input type="checkbox" class="auditCheck" data-q="4" />
           <span>
-            <strong>Brak standardu urządzeń</strong><br>
-            <span class="muted">Nie wiem, czy urządzenia są zgodne i bezpieczne.</span>
+            <strong>Mamy MFA dla wszystkich, ale nic więcej</strong><br>
+            <span class="muted">Brak Intune, Defender, dostępu warunkowego, polityk urządzeń.</span>
           </span>
         </label>
 
         <label class="check">
-          <input type="checkbox" class="auditCheck" />
+          <input type="checkbox" class="auditCheck" data-q="5" />
           <span>
-            <strong>Użytkownicy używają prywatnych narzędzi AI</strong><br>
-            <span class="muted">Ryzyko wycieku danych (Shadow AI).</span>
+            <strong>Nie robimy kopii zapasowych Microsoft 365</strong><br>
+            <span class="muted">Liczymy na to, że dane w chmurze są bezpieczne same z siebie.</span>
+          </span>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" class="auditCheck" data-q="6" />
+          <span>
+            <strong>Pracownicy używają prywatnie ChatGPT lub Gemini</strong><br>
+            <span class="muted">Wklejają tam dokumenty i dane firmy, bez kontroli.</span>
           </span>
         </label>
 
         <div class="row" style="margin-top: 12px;">
           <button class="btn ghost" id="resetAudit" type="button">Wyczyść</button>
-          <a class="btn primary" href="#kontakt">Chcę plan działania</a>
         </div>
       </div>
 
       <div class="scoreBox">
         <div>
-          <div class="muted" style="font-size:12px;">Wynik gotowości na Microsoft 365 i AI</div>
-          <div class="score" id="score">—</div>
-          <div class="meter" aria-label="Wskaźnik gotowości"><div id="meterBar"></div></div>
+          <span class="stageBadge" id="stageBadge">Zaznacz pytania, aby zobaczyć etap</span>
+          <div class="muted" style="font-size:12px;">Etap dojrzałości Microsoft 365</div>
+
+          <div class="maturityBar" aria-label="Etap dojrzałości">
+            <div class="maturityFill" id="maturityFill"></div>
+            <div class="maturityStops">
+              <div class="maturityStop" data-stage="0"></div>
+              <div class="maturityStop" data-stage="1"></div>
+              <div class="maturityStop" data-stage="2"></div>
+              <div class="maturityStop" data-stage="3"></div>
+              <div class="maturityStop" data-stage="4"></div>
+            </div>
+          </div>
+          <div class="maturityLabels">
+            <span data-label="0">Start</span>
+            <span data-label="1">Licencje</span>
+            <span data-label="2">Wdrożenie</span>
+            <span data-label="3">Zabezpieczenia</span>
+            <span data-label="4">Copilot</span>
+          </div>
         </div>
 
-        <div class="result" id="result">
-          <strong>Wskazówka:</strong> zaznacz checklistę, aby zobaczyć ocenę i rekomendację.
+        <div class="diagLine" id="diagLine">
+          <strong>Wskazówka:</strong> zaznacz pytania, aby zobaczyć rekomendowaną ścieżkę.
         </div>
 
-        <div class="card" style="margin:0; background: rgba(13, 22, 42, .35);">
-          <h3 style="margin-bottom:8px;">Następny krok</h3>
-          <p class="muted" style="margin:0">
-            Jeśli wynik jest niski – zaczynamy od podstaw: dostęp, backup, standard danych i bezpieczeństwo.
-            Potem dokładamy Copilot i scenariusze pracy z AI.
-          </p>
+        <div class="pathWrap" id="pathWrap"></div>
+
+        
+          <div class="ctaStack">
+            <a class="btn primary" id="ctaMain" href="#kontakt">Chcę plan działania</a>
+            <a class="btn ghost" href="#kontakt">Porozmawiajmy</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <p class="hint">To jest mini–audyt – po rozmowie przygotujemy pełny audyt środowiska z rekomendacjami i wyceną wdrożenia.</p>
+    <p class="hint">To mini–audyt. Pełny audyt środowiska Microsoft 365 wykonujemy po krótkiej rozmowie.</p>
   </div>
 </section>
+<!-- ================= END OF MINI AUDIT V3 ================= -->
 
+  
 <!-- ================= NASZE MARKI ================= -->
 <section id="marki">
   <div class="container">
