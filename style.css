@@ -887,3 +887,5 @@ h1{line-height:1.15;}
 .auditIntro p { margin: 0; font-size: 13px; line-height: 1.5; }
 @media (max-width: 480px) { .auditIntro h3 { font-size: 16px; } }
 @media (max-width: 480px) { .ctaStack .btn { width:100%; } }
+
+img[src="logo-32.png"] { width: 24px; height: 25px; display: block; }
