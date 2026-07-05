@@ -373,7 +373,7 @@ footer{
 @media (max-width:600px){.footGridV2{grid-template-columns:1fr;gap:24px;}.footGridV2 > div:first-child{grid-column:auto;}.footCta{flex-direction:column;align-items:flex-start;text-align:left;padding:22px;}.footCta h3{font-size:1.15rem;}.footCtaActions{width:100%;}.footCtaActions .btn{flex:1;justify-content:center;}.footBottom{flex-direction:column;align-items:flex-start;gap:10px;}}
 
 .footBrand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-.footBrand img{width:24px;height:25px;border-radius:10px;}
+.footBrand img{width:28px;height:29px;border-radius:10px;}
 .footBrandName{font-weight:800;letter-spacing:-.2px;font-size:1rem;}
 .footBrandTag{font-size:11px;margin-top:2px;}
 
