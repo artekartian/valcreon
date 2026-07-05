@@ -60,7 +60,7 @@ header .nav nav ul{display:flex;gap:6px;list-style:none;padding:0;margin:0;align
 .brand{flex:0 0 auto;min-width:0;display:flex;align-items:center;gap:12px;}
 .actions{flex:0 0 auto;display:flex;gap:8px;flex-wrap:nowrap;white-space:nowrap;align-items:center;}
 .logo{
-  width:34px;height:34px;border-radius:10px;
+  width:24px;height:25px;border-radius:10px;
   background:linear-gradient(135deg,rgba(90,167,255,.95),rgba(124,92,255,.95));
   box-shadow:0 10px 28px rgba(0,0,0,.35);
 }
@@ -373,7 +373,7 @@ footer{
 @media (max-width:600px){.footGridV2{grid-template-columns:1fr;gap:24px;}.footGridV2 > div:first-child{grid-column:auto;}.footCta{flex-direction:column;align-items:flex-start;text-align:left;padding:22px;}.footCta h3{font-size:1.15rem;}.footCtaActions{width:100%;}.footCtaActions .btn{flex:1;justify-content:center;}.footBottom{flex-direction:column;align-items:flex-start;gap:10px;}}
 
 .footBrand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-.footBrand img{width:36px;height:36px;border-radius:10px;}
+.footBrand img{width:24px;height:25px;border-radius:10px;}
 .footBrandName{font-weight:800;letter-spacing:-.2px;font-size:1rem;}
 .footBrandTag{font-size:11px;margin-top:2px;}
 
@@ -887,5 +887,3 @@ h1{line-height:1.15;}
 .auditIntro p { margin: 0; font-size: 13px; line-height: 1.5; }
 @media (max-width: 480px) { .auditIntro h3 { font-size: 16px; } }
 @media (max-width: 480px) { .ctaStack .btn { width:100%; } }
-
-img[src="logo-32.png"] { width: 24px; height: 25px; display: block; }
