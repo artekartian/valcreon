@@ -825,26 +825,6 @@ footer{
   .brand .t2 > *{display:none;} /* Schowaj długi oryginalny tekst */
 }
 
-.trustSection{padding:56px 0;background:radial-gradient(600px 200px at center,rgba(124,92,255,.08),transparent);}
-.trustLabel{text-align:center;font-size:.72rem;text-transform:uppercase;letter-spacing:2.4px;opacity:.55;margin:0 0 28px;font-weight:600;}
-.trustLogos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
-.trustLogos img{height:48px;width:auto;max-width:200px;object-fit:contain;filter:grayscale(1) brightness(1.4);opacity:.65;transition:opacity .3s ease,filter .3s ease,transform .3s ease;}
-.trustLogos img:hover{opacity:1;filter:grayscale(0) brightness(1);transform:scale(2);}
-
-@media(max-width:760px){.trustLogos{gap:36px;}.trustLogos img{height:40px;}}
-
-.trustLogos img[src="dom100.png"],
-.trustLogos img[src="car.jpg"]{filter:invert(1) grayscale(1);}
-.trustLogos img[src="dom100.png"]:hover,
-.trustLogos img[src="car.jpg"]:hover{filter:invert(0) grayscale(0);}
-.trustLogos img[src$=".svg"]{filter:invert(1) grayscale(1) brightness(1.2);}
-.trustLogos img[src$=".svg"]:hover{filter:invert(0) grayscale(1);}
-
-/* hover – dalej białe (trochę jaśniejsze) */
-.trustLogos img[src="tree.svg"]:hover,
-.trustLogos img[src="consult.svg"]:hover{filter:invert(1) brightness(1.2);opacity:1;}
-.trustLogos img[src$=".svg"]{filter:invert(1) grayscale(1) brightness(1.2);}
-
 .valueWrap{position:relative;display:inline-block;}
 .valueSmile{position:absolute;left:0;width:100%;bottom:-9px;height:14px;pointer-events:none;}
 
@@ -887,3 +867,90 @@ h1{line-height:1.15;}
 .auditIntro p { margin: 0; font-size: 13px; line-height: 1.5; }
 @media (max-width: 480px) { .auditIntro h3 { font-size: 16px; } }
 @media (max-width: 480px) { .ctaStack .btn { width:100%; } }
+
+/* ================= PATCH #produkty — Wariant A (szary → niebieski → fioletowy) ================= */
+/* Karta 1 (p1, M365 Admin) — było zielone, TERAZ szare/neutralne "dobry/start" */
+.productCard.p1{border-color:rgba(90,167,255,.18);background:linear-gradient(160deg,rgba(90,167,255,.05),rgba(18,28,51,.50))}
+.productCard.p1:hover{border-color:rgba(90,167,255,.35)}
+.productCard.p1 .productBadge{background:rgba(232,238,252,.04);color:var(--muted);border:1px solid rgba(232,238,252,.20)}
+/* Karta 2 (p2, M365 Cyber) — niebieska Valcreon, bez zmian */
+/* Karta 3 (p3, M365 Expert) — fioletowa Valcreon, bez zmian */
+/* Checkmarki w .productScope — pozostają zielone (#33d17a) jako sygnał "OK/potwierdzenie" */
+/* ================= KONIEC PATCH #produkty ================= */
+
+/* ================= SEKCJE CENOWE — #licencje + #copilot (Wariant A) ================= */
+#licencje,#copilot{padding:56px 0;position:relative}
+#licencje .sectionTitle,#copilot .sectionTitle{margin-bottom:20px}
+#licencje .pricing,#copilot .pricing{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px;align-items:stretch}
+#licencje .priceCard,#copilot .priceCard{position:relative;display:flex;flex-direction:column;gap:8px;padding:22px 20px;border-radius:20px;border:1px solid var(--line);background:rgba(18,28,51,.50);backdrop-filter:var(--blur);box-shadow:var(--shadow);text-align:left;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+#licencje .priceCard:hover,#copilot .priceCard:hover{transform:translateY(-2px);box-shadow:0 18px 52px rgba(0,0,0,.30)}
+/* KARTA 1 — DOBRY (dim) — szary/neutralny "wejście do świata" */
+#licencje .priceCard.dim,#copilot .priceCard.dim{opacity:.94;border-color:rgba(90,167,255,.15);background:linear-gradient(160deg,rgba(90,167,255,.04),rgba(18,28,51,.50))}
+#licencje .priceCard.dim:hover,#copilot .priceCard.dim:hover{opacity:1;border-color:rgba(90,167,255,.35)}
+/* KARTA 2 — LEPSZY (featured) — niebieski Valcreon "najczęściej wybierany" */
+#licencje .priceCard.featured,#copilot .priceCard.featured{border-color:rgba(90,167,255,.35);background:radial-gradient(900px 450px at 20% 5%,rgba(90,167,255,.14),transparent 55%),rgba(18,28,51,.55)}
+#licencje .priceCard.featured:hover,#copilot .priceCard.featured:hover{border-color:rgba(90,167,255,.55)}
+/* KARTA 3 — NAJLEPSZY (featured-purple) — fioletowy Valcreon "premium" */
+#licencje .priceCard.featured-purple,#copilot .priceCard.featured-purple{border-color:rgba(124,92,255,.35);background:radial-gradient(900px 450px at 20% 5%,rgba(124,92,255,.14),transparent 55%),rgba(18,28,51,.55)}
+#licencje .priceCard.featured-purple:hover,#copilot .priceCard.featured-purple:hover{border-color:rgba(124,92,255,.55)}
+/* Badge — bazowe */
+#licencje .priceBadge,#copilot .priceBadge{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;margin-bottom:6px;color:#9cc6ff;border:1px solid rgba(90,167,255,.35);background:rgba(90,167,255,.10)}
+#licencje .priceBadge .dot,#copilot .priceBadge .dot{width:7px;height:7px;border-radius:99px;display:inline-block;background:#5aa7ff;box-shadow:0 0 0 3px rgba(90,167,255,.14)}
+/* Badge — neutral (karta 1 obu sekcji, szary) */
+#licencje .priceBadge.neutral,#copilot .priceBadge.neutral{color:var(--muted);border-color:rgba(232,238,252,.20);background:rgba(232,238,252,.04)}
+#licencje .priceBadge.neutral .dot,#copilot .priceBadge.neutral .dot{background:#a9b6d6;box-shadow:0 0 0 3px rgba(232,238,252,.10)}
+/* Badge — purple (karta 3 obu sekcji, fiolet) */
+#licencje .priceBadge.purple,#copilot .priceBadge.purple{color:#c9b9ff;border-color:rgba(124,92,255,.35);background:rgba(124,92,255,.10)}
+#licencje .priceBadge.purple .dot,#copilot .priceBadge.purple .dot{background:#9b7cff;box-shadow:0 0 0 3px rgba(124,92,255,.14)}
+/* Typografia */
+#licencje .priceName,#copilot .priceName{margin:0;font-size:17px;font-weight:800;letter-spacing:-.3px;line-height:1.3}
+#licencje .priceDesc,#copilot .priceDesc{margin:0;color:var(--muted);font-size:14px;line-height:1.5;text-align:left}
+#licencje .priceValue,#copilot .priceValue{margin-top:8px;font-size:28px;font-weight:900;letter-spacing:-.8px;line-height:1}
+#licencje .priceUnit,#copilot .priceUnit{font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:.2px}
+/* Bullety */
+#licencje .bullets,#copilot .bullets{list-style:none;margin:12px 0 16px;padding:0;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:13.5px;line-height:1.55;text-align:left}
+#licencje .bullets li,#copilot .bullets li{display:flex;align-items:flex-start;gap:8px;margin:0;padding:0}
+#licencje .bullets li .ico-check,#copilot .bullets li .ico-check{flex-shrink:0;margin-top:2px;color:#33d17a}
+/* Przyciski w kartach — pełna szerokość, wyśrodkowane (jak w .productCard) */
+#licencje .priceCard .btn,#copilot .priceCard .btn{margin-top:auto;align-self:stretch;width:100%;display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:8px}
+#licencje .priceCard .btn svg,#copilot .priceCard .btn svg{flex:0 0 auto}
+/* Przycisk — DOBRY (dim, subtelny szaro-niebieski) */
+#licencje .priceCard.dim .btn,#copilot .priceCard.dim .btn{border-color:rgba(90,167,255,.25);background:rgba(90,167,255,.06);color:#9cc6ff}
+#licencje .priceCard.dim .btn:hover,#copilot .priceCard.dim .btn:hover{border-color:rgba(90,167,255,.45);background:rgba(90,167,255,.12);color:#c8e0ff}
+#licencje .priceCard.dim .btn svg,#copilot .priceCard.dim .btn svg{color:#9cc6ff}
+/* Przycisk — LEPSZY (featured, gradient niebieski) */
+#licencje .priceCard.featured .btn,#copilot .priceCard.featured .btn{border-color:rgba(90,167,255,.40);background:linear-gradient(135deg,rgba(90,167,255,.90),rgba(90,167,255,.60));color:#071022}
+#licencje .priceCard.featured .btn:hover,#copilot .priceCard.featured .btn:hover{border-color:rgba(90,167,255,.60);background:linear-gradient(135deg,rgba(90,167,255,1),rgba(124,92,255,.75))}
+#licencje .priceCard.featured .btn svg,#copilot .priceCard.featured .btn svg{color:#071022}
+/* Przycisk — NAJLEPSZY (featured-purple, gradient fioletowy) */
+#licencje .priceCard.featured-purple .btn,#copilot .priceCard.featured-purple .btn{border-color:rgba(124,92,255,.40);background:linear-gradient(135deg,rgba(124,92,255,.90),rgba(124,92,255,.60));color:#fff}
+#licencje .priceCard.featured-purple .btn:hover,#copilot .priceCard.featured-purple .btn:hover{border-color:rgba(124,92,255,.60);background:linear-gradient(135deg,rgba(124,92,255,1),rgba(90,167,255,.75))}
+#licencje .priceCard.featured-purple .btn svg,#copilot .priceCard.featured-purple .btn svg{color:#fff}
+/* Responsive — mobile-first */
+@media(min-width:768px){#licencje .pricing,#copilot .pricing{grid-template-columns:repeat(2,1fr);gap:18px}}
+@media(min-width:1180px){#licencje,#copilot{padding:80px 0}#licencje .pricing,#copilot .pricing{grid-template-columns:repeat(3,1fr);gap:1.2rem}#licencje .priceCard,#copilot .priceCard{padding:24px}#licencje .priceDesc,#copilot .priceDesc{min-height:60px}#licencje .priceName,#copilot .priceName{min-height:44px}}
+@media(max-width:980px){#licencje .priceDesc,#copilot .priceDesc{min-height:auto}#licencje .priceName,#copilot .priceName{min-height:auto}}
+@media(max-width:480px){#licencje,#copilot{padding:44px 0}#licencje .priceCard,#copilot .priceCard{padding:18px 16px;border-radius:16px}#licencje .priceValue,#copilot .priceValue{font-size:26px}}
+/* ================= KONIEC sekcji cenowych ================= */
+
+
+/* ================= SEKCJA #zaufali — logotypy klientów na białych kaflach ================= */
+#zaufali{padding:56px 0;position:relative}
+#zaufali .sectionTitle{margin-bottom:20px}
+#zaufali .trustGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+#zaufali .trustTile{display:flex;align-items:center;justify-content:center;background:#ffffff;border-radius:16px;border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.20);padding:18px 20px;min-height:88px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;cursor:default}
+#zaufali .trustTile:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(124,92,255,.18);border-color:rgba(124,92,255,.35)}
+#zaufali .trustTile img{max-width:100%;max-height:52px;width:auto;height:auto;object-fit:contain;display:block;filter:none;transition:transform .2s ease}
+#zaufali .trustTile:hover img{transform:scale(1.04)}
+/* Responsive — mobile-first */
+@media(min-width:600px){#zaufali .trustGrid{grid-template-columns:repeat(3,1fr);gap:16px}#zaufali .trustTile{min-height:96px;padding:20px 22px}#zaufali .trustTile img{max-height:56px}}
+@media(min-width:980px){#zaufali .trustGrid{grid-template-columns:repeat(5,1fr);gap:18px}#zaufali .trustTile{min-height:104px;padding:22px 24px}#zaufali .trustTile img{max-height:60px}}
+@media(min-width:1180px){#zaufali{padding:80px 0}}
+@media(max-width:480px){#zaufali{padding:44px 0}#zaufali .trustGrid{gap:12px}#zaufali .trustTile{min-height:76px;padding:14px 16px;border-radius:14px}#zaufali .trustTile img{max-height:44px}}
+/* ================= KONIEC #zaufali ================= */
+
+/* ================= PATCH — wyśrodkowanie dolnych linków pod sekcjami cenowymi ================= */
+/* Dolny link ("Więcej o Copilot dla firm" / "Kompletny cennik Microsoft 365") */
+/* jest wyśrodkowany pod kartami cenowymi */
+#licencje .container > .reveal:last-child,#copilot .container > .reveal:last-child{text-align:center}
+/* ================= KONIEC PATCH ================= */
