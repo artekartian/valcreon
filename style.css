@@ -954,3 +954,7 @@ h1{line-height:1.15;}
 /* jest wyśrodkowany pod kartami cenowymi */
 #licencje .container > .reveal:last-child,#copilot .container > .reveal:last-child{text-align:center}
 /* ================= KONIEC PATCH ================= */
+/* ================= PATCH — powiększenie nazw produktów w kartach cenowych ================= */
+#licencje .priceName,#copilot .priceName{font-size:20px;line-height:1.25;letter-spacing:-.3px}
+@media(min-width:1180px){#licencje .priceName,#copilot .priceName{font-size:22px;line-height:1.25}}
+/* ================= KONIEC PATCH ================= */
